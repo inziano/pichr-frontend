@@ -1,0 +1,11 @@
+<div *ngIf="images" >
+    <p> images </p>
+
+    <div *ngFor="let image of images" class="col-md-4 stretch-card grid-margin">
+        <div class="card card-img-holder">
+            <img src="{{image.url}}" alt="image">
+           
+           <app-download title='{{image.title}}'></app-download>
+        </div>
+    </div>
+</div>

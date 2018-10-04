@@ -1,0 +1,56 @@
+<div class="modal-body">
+    <div class="card col-xs-12">
+        <div class="card-body">
+            <h6 class="font-weight-light">
+                Upload Image
+            </h6>
+            <form class="pt-3" [formGroup]="uploadForm">
+                <div class="form-group">
+                    <label class=""> Upload</label>
+                    <input #file id="fileinput"  class="file-upload-default" name="img[]" type="file" (change)="uploadFile($event)" >
+                    <div class="input-group col-xs-12">
+                        <input class="form-control file-upload-info" disabled="" type="text" placeholder="{{path}}" >
+                        <span class="input-group-append">
+                            <button class="file-upload-browse btn btn-sm btn-inverse-info" type="button" (click)="file.click()" #upload>
+                                <i class="mdi mdi-upload"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="row" *ngIf="url">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="font-weight-light">
+                                Preview
+                            </h6>
+                            <img src="src/assets/images/dashboard/img_1.jpg" class="card-img-absolute">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="">Title</label>
+                    <input class="form-control" placeholder="Image title" type="text" formControlName="title">
+                </div>
+
+                <div class="form-group">
+                    <label for="desc" class=""> Description</label>
+                    <textarea id="desc" class="form-control" rows="3" formControlName="description"></textarea>
+                </div>
+                <div *ngIf="response">
+                    <div class="alert alert-info" role="alert">
+                        <strong>{{response}}!</strong>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input class="btn btn-md btn-gradient-success" type="submit" value="Upload" (click)="uploadImage()" >
+                    &nbsp;                               
+                    <button class="btn btn-md btn-gradient-danger" (click)="close()">Cancel</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
