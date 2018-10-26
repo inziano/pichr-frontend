@@ -30,9 +30,9 @@ export class SessionService {
      * verifyToken
      * Checks if the token in local storage is still valid
      */
-    public verifyToken() {
+    public getToken() {
         // Check if the token is still valid
-        // return tokenNotExpired();
+        return sessionStorage.getItem('pichrtoken');
     }
 
     /**

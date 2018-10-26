@@ -28,6 +28,11 @@
                   </div>
                   <a href="#" class="auth-link text-muted">Forgot password?</a>
                 </div>
+                <div *ngIf="resp">
+                  <div class="alert alert-info" role="alert">
+                      <strong>{{resp}}!</strong>
+                  </div>
+              </div>
                 <div>
                   <h6 class="font-weight-light">
                     Sign in with google

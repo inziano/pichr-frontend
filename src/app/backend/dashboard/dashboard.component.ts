@@ -6,6 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 // Service imports
 import { BackendService } from '../shared/backend.service';
 import { DynamicService } from '../../core/shared/dynamic.service';
+import { SessionService } from '../../core/shared/session.service';
 
 // Component imports
 import { UploadComponent } from '../../media/upload/upload.component';
@@ -35,11 +36,11 @@ export class DashboardComponent implements OnInit {
 
     // Constructor
     // tslint:disable-next-line:max-line-length
-    constructor ( private backend: BackendService, private dynamic: DynamicService, private modal: NgbModal ) {
+    constructor ( private backend: BackendService, private dynamic: DynamicService, private modal: NgbModal, private session: SessionService ) {
     }
 
     ngOnInit() {
-        this.status = 'online';
+        // console.log ( JSON.parse(this.session.getToken()) );
     }
 
     // Open

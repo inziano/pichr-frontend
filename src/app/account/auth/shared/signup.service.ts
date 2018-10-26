@@ -29,7 +29,7 @@ export class SignupService {
     // Constructor
     constructor( private http: Http, private auth: AuthService, private endpoint: EndpointsService, private session: SessionService ) {
         // Signup endpoint path
-        this.signup = this.endpoint.fullUrl + 'user/create';
+        this.signup = this.endpoint.fullUrl + 'user/register';
     }
 
     // Create new user
@@ -39,8 +39,7 @@ export class SignupService {
         // Pass details to api
         return this.http.post(this.signup, body, this.endpoint.options).pipe(map(response => {
             const resp = response.json();
-            // return this.auth.responseChecker(resp.data);
-            return resp;
+            return this.auth.responseChecker(resp.data);
         }));
 
     }

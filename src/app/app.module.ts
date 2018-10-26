@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
@@ -12,6 +13,7 @@ import { AppRouterModule } from './routes.modules';
 import { BackendModule } from './backend/backend.module';
 
 // Service imports
+import { AccountsService } from './backend/shared/accounts.service';
 import { AuthService } from './account/auth/shared/auth.service';
 import { BackendService } from './backend/shared/backend.service';
 import { DynamicService } from './core/shared/dynamic.service';
@@ -34,6 +36,7 @@ import { AppComponent } from './app.component';
   imports: [
     BackendModule,
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     HttpModule,
@@ -42,6 +45,7 @@ import { AppComponent } from './app.component';
     AppRouterModule
   ],
   providers: [
+    AccountsService,
     AuthService,
     BackendService,
     DynamicService,

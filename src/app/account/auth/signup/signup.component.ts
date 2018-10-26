@@ -53,27 +53,26 @@ export class SignupComponent implements OnInit {
             // console.log(account);
             // Submit to service for handling
             this.signup.createNewUser(account).subscribe( response => {
-                 this.resp = response;
-                 console.log(response);
-                // //  Set timeout then redirect to the next page
-                // setTimeout(() => {
-                //     // Redirect to new page
-                //     this.route.navigate( ['/profile'] );
-                // }, 2000);
-                });
+                 // Response
+                if ( response === 'succesful' ) {
+                    this.resp = 'Signup succesful';
+                    // Succesful so redirect
+                    // Set timeout
+                    setTimeout(() => {
+                    // Navigate to the new route
+                        this.route.navigate( ['/dashboard'] );
+                    }, 2000);
+                } else {
+                    this.resp = 'Sorry, signup unsuccesful';
+                } });
 
         } else if ( this.signupForm.invalid ) {
             // Throw error messages
-            this.invalid = 'Form is invalid';
-            console.log('invalid');
+            this.resp = 'Form is invalid';
 
-            return this.invalid;
         } else {
             // Throw exception
-            this.exception = 'This is a major error';
-            console.log('error');
-
-            return this.exception;
+            this.resp = 'This is a major error';
         }
     }
 }

@@ -35,26 +35,20 @@ export class AuthService {
 
     // Response checker
     public responseChecker ( res ) {
-        // Check if response has data field and data field is not null
 
-        if ( res.hasOwnProperty('token') ) {
-            // Get the token
-            const token = res.token;
-
-            // Call session handler and start new session
-            if ( this.session.newSession(token) ) {
-                // Return login succesful notification and handle redirect
-                return 'succesful';
-            } else {
-                // Login not succesful
-                return 'unsuccesful';
-            } // End if else block
-
+        /**
+         *
+         * Store value in storage
+         */
+        // Call session handler and start new session
+        if ( this.session.newSession(res) ) {
+            // Return login succesful notification and handle redirect
+            return 'succesful';
         } else {
-            // Response returned null
-            console.log('no her');
-            // Get the message and pass to the front
-        }
+            // Login not succesful
+            return 'unsuccesful';
+        } // End if else block
+
     }
 
     // Error handler
@@ -72,12 +66,36 @@ export class AuthService {
 
     // Login
     public logon( credentials ) {
-
-        console.log('sth');
         // Send credentials to api
         return this.http.post( this.login, credentials).pipe( map( response => {
-            const resp = response.json();
-            return this.responseChecker(resp.data);
+
+            /**
+             * Check the token is part of the response 
+             * Fall back incase api returns with data but no token
+             */
+            if ( response.json().hasOwnProperty('data') ) {
+                // Get the response
+                const resp = response.json().data.token;
+                // Get the id
+                const resp_id = response.json().data.id;
+                // Call token maker
+                const pichrtoken = this.tokenMaker(resp, resp_id);
+                // store token
+                return this.responseChecker(pichrtoken);
+            } else {
+                // fail
+                console.log('sth');
+            }
         }));
+    }
+
+    public tokenMaker ( res, id ) {
+
+        // add the id to theh response
+        res['id'] = id;
+        // stringify the json object
+        const tkn = JSON.stringify(res);
+        // Return the stringified token
+        return tkn;
     }
 }

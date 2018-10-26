@@ -95,7 +95,7 @@ export class UploadComponent implements OnInit {
     }
 
     // Build the form
-    private buildForm(formData: FormData, title: any, description: string, views: number, category: number, user: number) {
+    private buildForm(formData: FormData, title: any, description: string, views, category, user) {
         formData.append('title', title);
         formData.append('description', description);
         formData.append('image', this.images.files[0]);
@@ -103,7 +103,5 @@ export class UploadComponent implements OnInit {
         formData.append('categories_id', category);
         formData.append('user_id', user);
     }
-
-   
 
 }

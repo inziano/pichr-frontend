@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+// Service
+import { AccountsService } from '../shared/accounts.service';
 
 // Service imports
 
@@ -6,7 +9,16 @@ import { Component } from '@angular/core';
     templateUrl: './profile.component.html'
 })
 
-export class ProfileComponent {
+export class ProfileComponent implements OnInit {
+
+    details: any;
+
     // Constructor
-    constructor() {}
+    constructor( private acct: AccountsService ) {}
+
+    ngOnInit () {
+        this.acct.getAccountDetails().subscribe( response => {
+            this.details = response;
+        });
+    }
 }

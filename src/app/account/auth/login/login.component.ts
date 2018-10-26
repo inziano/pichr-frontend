@@ -48,18 +48,25 @@ export class LoginComponent implements OnInit {
             // Submit to the service for handling
            this.auth.logon(credentials).subscribe( response => {
             // Response
-            this.resp = response;
-            // Set timeout
-            setTimeout(() => {
-                // Navigate to the new route
-                this.route.navigate( ['/dashboard'] );
-            }, 2000);
-            });
+            if ( response === 'succesful' ) {
+                this.resp = 'Login succesful';
+                // Succesful so redirect
+                 // Set timeout
+                setTimeout(() => {
+                 // Navigate to the new route
+                    this.route.navigate( ['/dashboard'] );
+                }, 2000);
+            } else {
+                this.resp = 'Sorry, login unsuccesful';
+            } });
 
         } else if ( this.loginForm.invalid ) {
             // Throw error
+            this.resp = 'Kindly fill in your details';
         } else {
             // Throw exception
         }
     }
+
+
 }
