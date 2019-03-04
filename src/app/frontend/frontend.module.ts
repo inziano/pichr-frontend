@@ -4,30 +4,29 @@ import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
-
-// custom modules
-import { BackendRouterModule } from '../backend/backend-routes.module';
+// Custom modules
+import { FrontendRouterModule } from '../frontend/frontend-routes.modules';
 import { MediaModule } from '../media/media.module';
 
 // Declarations
-import { BackendDeclarations } from '../backend';
+import { FrontendDeclarations } from '../frontend';
 
 @NgModule({
     declarations: [
-        ...BackendDeclarations,
+        ...FrontendDeclarations
     ],
     imports: [
-        BackendRouterModule,
         BrowserModule,
+        FrontendRouterModule,
         HttpClientModule,
         HttpModule,
         MediaModule,
-        ReactiveFormsModule,
+        ReactiveFormsModule
     ],
     exports: [
+        ...FrontendDeclarations
     ],
-    providers: [ ]
+    providers: []
 })
 
-export class BackendModule {}
+export class FrontendModule {}

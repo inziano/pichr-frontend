@@ -14,7 +14,8 @@ import { DownloadComponent } from './../download/download.component';
 
 @Component({
     selector: 'app-list',
-    templateUrl: './list.component.html'
+    templateUrl: './list.component.html',
+    styleUrls: ['./list.component.css', './util.css']
 })
 
 export class ListComponent implements OnInit, AfterViewInit {

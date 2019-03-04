@@ -11,6 +11,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 // Custom modules
 import { AppRouterModule } from './routes.modules';
 import { BackendModule } from './backend/backend.module';
+import { FrontendModule } from './frontend/frontend.module';
 
 // Service imports
 import { AccountsService } from './backend/shared/accounts.service';
@@ -38,6 +39,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    FrontendModule,
     HttpClientModule,
     HttpModule,
     ReactiveFormsModule,
