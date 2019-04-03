@@ -32,5 +32,7 @@ export class EndpointsService {
         s3ForcePathStyle: true, // needed with minio?
         signatureVersion: 'v4'
     });
-    // public bucket = 'bucket';
+
+    // Pusher API key
+
 }

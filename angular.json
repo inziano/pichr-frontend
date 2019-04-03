@@ -31,8 +31,10 @@
               "src/styles.css"
             ],
             "scripts": [
+              "node_modules/pusher-js/dist/web/pusher.min.js",
               "node_modules/jquery/dist/jquery.js",
               "node_modules/bootstrap/dist/js/bootstrap.js",
+              "src/assets/vendors/js/dashboard.js",
               "src/assets/vendors/js/vendor.bundle.base.js",
               "src/assets/vendors/uikit/js/uikit.min.js",
               "src/assets/vendors/uikit/js/uikit-icons.min.js",

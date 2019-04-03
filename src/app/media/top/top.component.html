@@ -15,16 +15,21 @@
                 <li><a href="#">People</a></li>
                 <li><a href="#">Abstract</a></li>
             </ul>
-            <div class="image-holder uk-width-1-1">
-                <div class="demo uk-lightbox"><a href=""><img src="http://picsum.photos/602/660/" alt="" class="demo-image"></a></div>
-                <div class="demo"><img src="http://picsum.photos/660/646/" alt="" class="demo-image"></div>
+            <div class="image-holder uk-width-1-1" *ngIf="images">
+                <div *ngFor="let image of images" class="demo" uk-lightbox="animation: fade"><a href="{{ image.url }}"><img src="{{ image.url }}" alt="" class="demo-image"></a></div>
+                <!-- <div class="demo" *ngFor="let image of images"><img src="{{ image.url }}" alt="{{ image.title }}" class="demo-image"></div> -->
+
+                <!-- <div class="demo"><img src="http://picsum.photos/660/646/" alt="" class="demo-image"></div>
                 <div class="demo"><img src="http://picsum.photos/741/375/" alt="" class="demo-image"></div>
                 <div class="demo"><img src="http://picsum.photos/813/455/" alt="" class="demo-image"></div>
                 <div class="demo"><img src="http://picsum.photos/470/870/" alt="" class="demo-image"></div>
                 <div class="demo"><img src="http://picsum.photos/664/653/" alt="" class="demo-image"></div>
                 <div class="demo"><img src="http://picsum.photos/708/313/" alt="" class="demo-image"></div>
                 <div class="demo"><img src="http://picsum.photos/738/578/" alt="" class="demo-image"></div>
-                <div class="demo"><img src="http://picsum.photos/470/316/" alt="" class="demo-image"></div>
+                <div class="demo"><img src="http://picsum.photos/470/316/" alt="" class="demo-image"></div> -->
+            </div>
+            <div class="uk-flex-center uk-width-1-2 uk-position-center uk-position-relative uk-margin-large-top">
+                <h5> <a class="uk-link-muted" routerLink="/list" routerLinkActive="active">View All</a> </h5>
             </div>
         </div>
     </div>

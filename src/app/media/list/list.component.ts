@@ -1,8 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 
-// rxjs
-import { map } from 'rxjs/operators';
-
 // Service imports
 import { MediaService } from '../shared/media.service';
 
@@ -28,7 +25,7 @@ export class ListComponent implements OnInit, AfterViewInit {
     constructor ( private media: MediaService, private modal: NgbModal ) {}
 
     ngOnInit () {
-
+        // Populate the images
         this.images = this.media.fetchImage();
     }
 

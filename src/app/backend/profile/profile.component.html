@@ -1,7 +1,7 @@
-<div class="row">
+<div class="row"  *ngIf='details'>
     <div class="col-md-7 stretch-card grid-margin">
         <div class="card bg-gradient-primary card-img-holder text-white">
-            <div class="card-body"  *ngIf='details'>
+            <div class="card-body">
                 <img src="src/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>
                 <h4 class="card-title text-white mb-3">
                     Account
@@ -34,7 +34,7 @@
     </div>
     <div class="col-md-5 stretch-card grid-margin">
         <div class="card bg-gradient-info card-img-holder text-white">
-            <div class="card-body" *ngIf='details'>
+            <div class="card-body">
                 <img src="src/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>
                 <h4 class="card-title text-white mb-3">
                     Social Media
@@ -72,6 +72,136 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-10 offset-md-1 stretch-card grid-margin">
+        <div class="card card-img-holder text-white">
+            <div class="card-body">
+                <img src="../../../assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>
+                <h4 class="card-title mb-3">
+                    Account
+                </h4>
+                <p class="card-description m1-1">
+                    Please register your account
+                </p>
+                <form class="pt-3" [formGroup]="accountForm" (ngSubmit)="addAccount()">
+                    <p class="card-description m1-1">
+                        Personal info
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control form-control-md" id="lastName" placeholder="Last Name" formControlName="lastName"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control form-control-md" id="firstName" placeholder="First Name" formControlName="firstName">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                           <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <input type="date" class="form-control form-control-md" id="dob" placeholder="D.O.B" formControlName="dob">
+                                </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <!-- <label class="col-sm-3 col-form-label">Gender</label> -->
+                                <div class="col-sm-4">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked>
+                                            Female
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="option2">
+                                            Male
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="card-description m1-1">
+                        Location
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control form-control-md" id="city" placeholder="City" formControlName="city"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control form-control-md" id="country" placeholder="Country" formControlName="country"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="card-description m1-1">
+                        Social
+                    </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control form-control-md" id="twitter" placeholder="Twitter" formControlName="twitter"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control form-control-md" id="instagram" placeholder="Instagram" formControlName=instagram/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control form-control-md" id="facebook" placeholder="Facebook" formControlName="facebook"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control form-control-md" id="website" placeholder="Website" formControlName="website"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 offset-md-8">
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <input type="button" class="btn btn-gradient-danger" value="cancel">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="submit" class="btn btn-gradient-success btn-icon-text" value="submit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

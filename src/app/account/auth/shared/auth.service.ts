@@ -67,7 +67,7 @@ export class AuthService {
     // Login
     public logon( credentials ) {
         // Send credentials to api
-        return this.http.post( this.login, credentials).pipe( map( response => {
+        return this.http.post( this.login, credentials  ).pipe( map( response => {
 
             /**
              * Check the token is part of the response 
@@ -91,7 +91,7 @@ export class AuthService {
 
     public tokenMaker ( res, id ) {
 
-        // add the id to theh response
+        // add the id to the response
         res['id'] = id;
         // stringify the json object
         const tkn = JSON.stringify(res);

@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-    templateUrl: './activity.component.html'
+    templateUrl: './activity.component.html',
+    styleUrls: ['./activity.component.css'],
 })
 
-export class ActivityComponent {
+export class ActivityComponent implements OnInit {
+
     // Constructor
-    constructor () {}
+    constructor () {
+    }
+
+    // On init
+    ngOnInit () {
+        //
+    }
 }

@@ -1,77 +1,30 @@
-<div *ngIf="images" class="row d-flex">
-   
-    <!-- <h4 class="p-5 mx-auto"> Images </h4> -->
-<!-- 
-    <ul class="image-list p-2" >
-        <li class="" *ngFor="let image of images">
-
-            <div class="post-image">
-                <a class="image-link">
-                    <span class="image-placeholder"></span>
-                    <img class="attachment" src="{{image.url}}" alt="image">
-                </a>
-            </div>
-            <div class="item-info">
-                <div class="item-info-row">
-                    <div class="title-column">
-                        <h3>
-                            <a href="">
-                                {{image.title}}
-                            </a>
-                        </h3>
-                    </div>
-                    <div class="price-column">
-                        <span class="price">
-                            <span class="amount">
-                                <span class="currency-symbol"> Ksh. </span>
-                                1
-                            </span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-        </li>
-    </ul> -->
-
-</div> 
-
-<!-- Banner2 -->
-<section class="banner2 bg5 p-t-55 p-b-55">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-10 col-md-8 col-lg-6 m-l-r-auto p-t-15 p-b-15">
-                <div class="hov-img-zoom pos-relative">
-                    <img src="../../../assets/images/bg.jpg" alt="IMG-BANNER">
-
-                    <div class="ab-t-l sizefull flex-col-c-b p-l-15 p-r-15 p-b-20">
-                        <div class="t-center">
-
-                            <a href="product-detail.html" class="dis-block s-text3 p-b-5">
-                                Gafas sol Hawkers one
-                            </a>
-
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-10 col-md-8 col-lg-6 m-l-r-auto p-t-15 p-b-15">
-                <div class="bgwhite hov-img-zoom pos-relative p-b-20per-ssm">
-                    <img src="../../../assets/images/bg.jpg" alt="IMG-BANNER">
-
-                    <div class="ab-t-l sizefull flex-col-c-b p-l-15 p-r-15 p-b-20">
-                        <div class="t-center">
-                            <a href="product-detail.html" class="dis-block s-text3 p-b-5">
-                                Gafas sol Hawkers one
-                            </a>
-
-                        </div>
-
-                    </div>
-                </div>
+<div class="uk-section" uk-section>
+    <div class="uk-container uk-position-relative uk-margin-large-bottom">
+        <div class="uk-grid-match" uk-grid>
+            <div class="uk-position-center">
+                <h6 class="pichr-heading uk-text-lead"> Browse </h6>
             </div>
         </div>
     </div>
-</section>
+    <div class="uk-container uk-position-relative">
+        <nav class="uk-navbar uk-flex uk-flex-center uk-position-relative ">
+            <ul class="uk-flex-center uk-tab" uk-tab >
+                <li><a href="#">Landscapes</a></li>
+                <li><a href="#">Architecture</a></li>
+                <li><a href="#">People</a></li>
+                <li><a href="#">Abstract</a></li>
+                <li><a href="#">Technology</a></li>
+            </ul>          
+        </nav>
+        <div class="uk-grid-match uk-margin-large-bottom" uk-grid>
+            <div >
+                <h6 class="pichr-heading uk-text-lead"> Landscapes </h6>
+            </div>
+        </div>
+    </div>
+    <div class="uk-container uk-position-relative">
+        <div class="image-holder uk-width-1-1" *ngIf="images">  
+            <div class="demo" *ngFor="let image of images"><img src="{{ image.url }}" alt="{{ image.title }}" class="demo-image"></div>
+        </div>
+    </div>
+</div>

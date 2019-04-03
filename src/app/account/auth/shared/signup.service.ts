@@ -37,7 +37,7 @@ export class SignupService {
         // User details to string
         const body: string = JSON.stringify( details );
         // Pass details to api
-        return this.http.post(this.signup, body, this.endpoint.options).pipe(map(response => {
+        return this.http.post(this.signup, body, this.endpoint.option).pipe(map(response => {
             const resp = response.json();
             return this.auth.responseChecker(resp.data);
         }));

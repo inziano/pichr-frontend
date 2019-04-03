@@ -4,6 +4,7 @@ import { EndpointsService } from '../../core/shared/endpoint.service';
 
 // Rx imports
 import { map } from 'rxjs/internal/operators';
+import { from, Observable } from 'rxjs';
 
 // Other
 import { saveAs} from 'file-saver';
@@ -14,6 +15,7 @@ export class MediaService {
 
     // Upload path
     upload: string;
+    items: Observable<object[]>;
 
     // constructor
     constructor ( private http: Http, private endpoint: EndpointsService ) {
@@ -37,8 +39,9 @@ export class MediaService {
      *
      * Image fetch
      */
-     public fetchImage(): Array<any> {
-        // Get image endpoint
+    public fetchImage(): Array<object[]> {
+
+      // Get image endpoint
         // return 'sth';
         const items: any[] = [];
         const params = {
@@ -46,21 +49,20 @@ export class MediaService {
         };
 
        this.endpoint.bucket.listObjects(params, (err, data) => {
+            const raw = data.Contents;
 
-        const raw = data.Contents;
+            // console.log(raw);
 
-        console.log(raw);
-
-        raw.forEach( (item) => {
-            items.push ({
-                id: item.ETag,
-                title: item.Key,
-                url: 'http://127.0.0.1:9000/pichr/' + item.Key
+            raw.forEach( (item) => {
+                items.push ({
+                    id: item.ETag,
+                    title: item.Key,
+                    url: 'http://127.0.0.1:9000/pichr/' + item.Key
+                });
             });
         });
-       });
 
-       return items;
+        return items;
     }
 
     /**
