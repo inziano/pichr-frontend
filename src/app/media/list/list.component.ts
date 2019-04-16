@@ -5,9 +5,11 @@ import { MediaService } from '../shared/media.service';
 
 // Other
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+// import { macyLoader } from '../../../assets/scripts/main.js';
 
 // Component
 import { DownloadComponent } from './../download/download.component';
+
 
 @Component({
     selector: 'app-list',
@@ -22,7 +24,9 @@ export class ListComponent implements OnInit, AfterViewInit {
     // Path
     // path: any = this.endpoint.imageUrl;
 
-    constructor ( private media: MediaService, private modal: NgbModal ) {}
+    constructor ( private media: MediaService, private modal: NgbModal ) {
+
+    }
 
     ngOnInit () {
         // Populate the images

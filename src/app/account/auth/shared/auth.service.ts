@@ -77,9 +77,11 @@ export class AuthService {
                 // Get the response
                 const resp = response.json().data.token;
                 // Get the id
-                const resp_id = response.json().data.id;
+                const resp_id = response.json().data.user_id;
+                // Get the name
+                const resp_name = response.json().data.user_name;
                 // Call token maker
-                const pichrtoken = this.tokenMaker(resp, resp_id);
+                const pichrtoken = this.tokenMaker(resp, resp_id, resp_name);
                 // store token
                 return this.responseChecker(pichrtoken);
             } else {
@@ -89,10 +91,11 @@ export class AuthService {
         }));
     }
 
-    public tokenMaker ( res, id ) {
+    public tokenMaker ( res, id, name ) {
 
         // add the id to the response
-        res['id'] = id;
+        res[ 'id' ] = id;
+        res[ 'name' ] = name;
         // stringify the json object
         const tkn = JSON.stringify(res);
         // Return the stringified token

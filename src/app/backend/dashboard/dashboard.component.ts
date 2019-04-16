@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 // Service imports
 import { PusherService } from '../../core/shared/pusher.service';
 import { DynamicService } from '../../core/shared/dynamic.service';
+import { SessionService } from '../../core/shared/session.service';
 
 // Other imports
 import { AppState } from '../../../app/app.state';
@@ -51,7 +52,8 @@ export class DashboardComponent implements OnInit {
         private modal: NgbModal,
         private pusher: PusherService,
         private route: Router,
-        private store: Store<AppState>
+        private store: Store<AppState>,
+        private session: SessionService
 
         ) {
 
@@ -77,11 +79,9 @@ export class DashboardComponent implements OnInit {
     // Logout
     logout ( index ) {
         // Delete from the store
-        this.store.dispatch ( new SessionAction.RemoveSession( index ) );
-
+        this.session.removeToken( index );
         // redirect
         setTimeout ( () => {
-
             // Navigate to the home
             this.route.navigate( ['/'] );
         }, 2000 );

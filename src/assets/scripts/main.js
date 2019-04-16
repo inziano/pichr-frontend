@@ -3,7 +3,7 @@ $(document).ready(function(){
     var masonry = new Macy({
         container: '.image-holder',
         trueOrder: false,
-        waitForImages: false,
+        waitForImages: true,
         useOwnImageLoader: false,
         debug: true,
         mobileFirst: true,
@@ -18,3 +18,4 @@ $(document).ready(function(){
     });
 
 });
+

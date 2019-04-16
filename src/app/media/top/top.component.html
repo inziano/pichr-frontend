@@ -16,17 +16,17 @@
                 <li><a href="#">Abstract</a></li>
             </ul>
             <div class="image-holder uk-width-1-1" *ngIf="images">
-                <div *ngFor="let image of images" class="demo" uk-lightbox="animation: fade"><a href="{{ image.url }}"><img src="{{ image.url }}" alt="" class="demo-image"></a></div>
-                <!-- <div class="demo" *ngFor="let image of images"><img src="{{ image.url }}" alt="{{ image.title }}" class="demo-image"></div> -->
-
-                <!-- <div class="demo"><img src="http://picsum.photos/660/646/" alt="" class="demo-image"></div>
-                <div class="demo"><img src="http://picsum.photos/741/375/" alt="" class="demo-image"></div>
-                <div class="demo"><img src="http://picsum.photos/813/455/" alt="" class="demo-image"></div>
-                <div class="demo"><img src="http://picsum.photos/470/870/" alt="" class="demo-image"></div>
-                <div class="demo"><img src="http://picsum.photos/664/653/" alt="" class="demo-image"></div>
-                <div class="demo"><img src="http://picsum.photos/708/313/" alt="" class="demo-image"></div>
-                <div class="demo"><img src="http://picsum.photos/738/578/" alt="" class="demo-image"></div>
-                <div class="demo"><img src="http://picsum.photos/470/316/" alt="" class="demo-image"></div> -->
+                <div *ngFor="let image of images" class="demo uk-inline-clip uk-transition-toggle" tabindex="0">
+                    <a href="{{ image.url }}"><img src="{{ image.url }}" alt="" class="demo-image"></a>
+                    <div class="uk-transition-slide-bottom uk-position-cover uk-overlay uk-overlay-primary" style=" right: -10%" ></div>
+                    <div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-primary" style=" right: -10%">
+                        <p class="uk-h4 uk-margin-small-bottom"> {{ image.title }} </p>
+                        <ul class="uk-iconnav">
+                            <li><a href="#" uk-icon="icon: heart"></a></li>
+                            <li><a href="#" uk-icon="icon: download"></a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div class="uk-flex-center uk-width-1-2 uk-position-center uk-position-relative uk-margin-large-top">
                 <h5> <a class="uk-link-muted" routerLink="/list" routerLinkActive="active">View All</a> </h5>
