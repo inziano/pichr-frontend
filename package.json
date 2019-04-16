@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --prod"
+    "heroku-postbuild": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
@@ -31,10 +31,12 @@
     "core-js": "^2.5.4",
     "crypto": "^1.0.1",
     "crypto-js": "^3.1.9-1",
+    "express": "^4.16.4",
     "file-saver": "^2.0.0-rc.3",
     "jquery": "^3.3.1",
     "macy": "^2.4.0",
     "minio": "^7.0.1",
+    "path": "^0.12.7",
     "popper.js": "^1.14.3",
     "pusher-js": "^4.4.0",
     "rxjs": "^6.0.0",
