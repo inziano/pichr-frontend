@@ -7,7 +7,7 @@ import { SignupComponent } from './account/auth/signup/signup.component';
 import { UploadComponent } from './media/upload/upload.component';
 
 // Constant that holds the routes
-const Routes = [
+const PichrRoutes = [
     // Website routes
     { path: 'login', component: LoginComponent },
     { path: 'register', component: SignupComponent },
@@ -17,7 +17,7 @@ const Routes = [
 // Routing module
 @NgModule({
     imports: [
-        RouterModule.forRoot(Routes)
+        RouterModule.forRoot(PichrRoutes)
     ],
     exports: [
         RouterModule

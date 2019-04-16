@@ -1,0 +1,90 @@
+@import url("../vendors/uikit/css/uikit-rtl.css");
+@import url("../vendors/uikit/css/uikit.css");
+@import url("https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,800");
+/**
+ * Usage
+ * 
+ * font-family: 'Muli', sans-serif
+*/
+html {
+  font-family: 'Muli', sans-serif;
+  font-size: 14px;
+}
+
+body {
+  overflow-y: hidden;
+  margin: 0;
+}
+
+/** 
+ * Landing area 
+ */
+#landing {
+  background-image: url('../../assets/images/bg3.jpeg');
+  height: 100vh;
+}
+
+#landing div p {
+  font-family: 'Muli', sans-serif;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(60px);
+  }
+}
+
+svg #wheel {
+  animation: scroll ease-in-out 2s infinite;
+}
+
+/**
+ *  Top picks Section 
+*/
+.pichr-heading {
+  font-family: 'Muli', sans-serif;
+  font-weight: 300;
+}
+
+#services div div p {
+  font-family: 'Muli', sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+#services div div p:first-of-type {
+  font-size: 1.4rem;
+}
+
+.pricing div p {
+  font-family: 'Muli', sans-serif;
+  font-weight: 300;
+  color: #333;
+}
+
+.price {
+  font-family: 'Muli', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.price span {
+  font-size: 1.3rem;
+}
+
+/**
+ * Footer
+ *
+ */
+footer div p {
+  font-family: 'Muli', sans-serif;
+}
+
+footer a {
+  font-size: 1rem;
+  letter-spacing: 0.06rem;
+  font-weight: 300;
+}
