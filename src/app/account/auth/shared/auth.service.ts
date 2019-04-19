@@ -31,7 +31,6 @@ export class AuthService {
         // Login endpoint path
         this.login = this.endpoint.fullUrl + 'user/login';
 
-        console.log( this.endpoint.fullUrl );
     }
 
 
