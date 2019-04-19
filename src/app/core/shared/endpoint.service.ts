@@ -11,7 +11,7 @@ import * as aws from 'aws-sdk';
 export class EndpointsService {
 
     // This service connects the api.
-    public baseUrl = environment.api_url || 'http://localhost:8000/';
+    public baseUrl = environment.api_url;
     public apiUrl = 'api/';
     public fullUrl = this.baseUrl + this.apiUrl;
 
