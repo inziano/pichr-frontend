@@ -30,6 +30,8 @@ export class AuthService {
     constructor( private http: Http, private endpoint: EndpointsService, private session: SessionService) {
         // Login endpoint path
         this.login = this.endpoint.fullUrl + 'user/login';
+
+        console.log( this.endpoint.fullUrl );
     }
 
 
